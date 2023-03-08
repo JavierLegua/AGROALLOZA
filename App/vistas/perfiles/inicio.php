@@ -65,35 +65,36 @@
         </div>
       </div>
     </div>
+
     <!-- modal cambiar contraseña -->
 
-<div class="modal fade" id="cambiocontraseña_<?php echo $uruario->idusuario ?>" tabindex="-1" aria-labelledby="exampleModalcambio" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalcambio">Cambiar contraseña <?php echo $uruario->nombre ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body container">
-                <form method="post" action="<?php echo RUTA_URL?>/usuarios/actualizarPerfil/<?php echo $uruario->idusuario ?>">
+    <div class="modal fade" id="cambiocontraseña_<?php echo $uruario->idusuario ?>" tabindex="-1" aria-labelledby="exampleModalcambio" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalcambio">Cambiar contraseña <?php echo $uruario->nombre ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body container">
+                    <form method="post" action="<?php echo RUTA_URL?>/usuarios/actualizarPerfil/<?php echo $uruario->idusuario ?>">
 
-                    <div class="d-flex justify-content-around row"> 
+                        <div class="d-flex justify-content-around row"> 
 
-                        <div class="input-group mb-3">
-                            <input type="password" name="clave" id="clave" class="form-control" aria-describedby="botonMostrar">
-                            <button class="btn btn-outline-primary" type="button" id="botonMostrar" onclick="mostrarPass()"><i class="bi bi-eye"></i></button>
+                            <div class="input-group mb-3">
+                                <input type="password" name="clave" id="clave" class="form-control" aria-describedby="botonMostrar">
+                                <button class="btn btn-outline-primary" type="button" id="botonMostrar" onclick="mostrarPass()"><i class="bi bi-eye"></i></button>
+                            </div>
+
+                            <input type="submit" class="btn btn-success" value="Actualizar contraseña" onclick="return confirm('¿Seguro que quieres actualizar la contraseña?');">
+
                         </div>
 
-                        <input type="submit" class="btn btn-success" value="Actualizar contraseña" onclick="return confirm('¿Seguro que quieres actualizar la contraseña?');">
-
-                    </div>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- fin modal cambiar contraseña -->
+    <!-- fin modal cambiar contraseña -->
 </main>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php' ?>
