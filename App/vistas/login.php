@@ -56,15 +56,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body text-dark">
-                    <form id="emailRecuperacion" method="post" class="card-body">
+                    <form id="emailRecuperacion" method="post" class="card-body" action="<?php echo RUTA_URL?>/inicio/recuperarPass1">
                       <div class="mb-3">
                           <label for="email">Email de recuperación: <sup>*</sup></label>
                           <input type="text" name="emailRec" id="emailRec" class="form-control form-control-lg" autocomplete="off" value="">
                       </div>
+                      <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar correo</button>
                     </form>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="recuperarPass()">Enviar correo</button>
                   </div>
                 </div>
               </div>
@@ -141,29 +141,6 @@
 </main>
 
 <script>
-
-  async function recuperarPass(){
-        const data = new FormData(document.getElementById('emailRecuperacion'));
-              // alert("aaaaaa")
-              // console.log(data)
-         await fetch('<?php echo RUTA_URL?>/inicio/recuperarPass', {
-             method: "POST",
-             body: data,
-            //  alert("dddddd")
-         })
-             .then((resp) => resp.json())
-             .then(function(data) {
-              
-              console.log(data)
-
-                 if (Boolean(data)){
-                   alert('Revisa tu correo')
-                 } else {
-                     alert('Error al Cerrar la sesión')
-                 }
-                
-             })
-  }
 
 
 </script>
