@@ -18,10 +18,11 @@
     define('DB_NOMBRE', 'AgroAlloza');
 
     //Constantes enviar email
-    define('EmailEmisor', 'makelelesinformatica@gmail.com');
-    define('EmailPass', 'Makeleles123');
+    define('EmailEmisor', 'agroalloza@hotmail.com');
+    define('EmailPass', 'Agroza1234');
     define('Emisor', 'AgroAlloza');
 
     //Constante para las imagenes de las licencias
     define('RUTA_ImgDatos', RUTA_URL . '/public/img/datosBBDD/');
+?>
 

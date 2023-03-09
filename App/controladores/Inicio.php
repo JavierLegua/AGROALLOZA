@@ -64,9 +64,9 @@
                
         }
 
-        public function recuperarPass(){
+        public function recuperarPass1(){
 
-            print_r($_POST);exit();
+            // print_r($_POST['emailRec']);exit();
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
@@ -84,7 +84,7 @@
 
                 $passCifrada = password_hash($pass, PASSWORD_BCRYPT);
 
-                $to = $_POST;
+                $to = $_POST['emailRec'];
                 //$email = "javierlegua14@gmail.com";
                 //$to = "javierlegua14@gmail.com";
                 $nombreTo = "Socio";

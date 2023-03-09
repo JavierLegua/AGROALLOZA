@@ -16,6 +16,7 @@
 
         public static function sendEmail($to,$nombreTo,$asunto,$cuerpo,$from="makelelesinformatica@gmail.com",$nombreFrom="AgroAlloza")
         {
+            // print_r($to);exit();
 
             $mail = new PHPMailer(true);
     
@@ -31,7 +32,9 @@
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                 $mail->Port       = 587;  */                                  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
                 
-                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                // $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                $mail->SMTPSecure = 'tls';
+                $mail->Host       = 'smtp.office365.com';                    // Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     //            $mail->Username   = $from;                     // SMTP username
                 $mail->Username   = self::$email;                     // SMTP username
@@ -71,3 +74,4 @@
          }
     
     }
+?>
