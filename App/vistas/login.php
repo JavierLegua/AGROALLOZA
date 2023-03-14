@@ -29,7 +29,7 @@
               <form method="post">
 
                 <div class="form-outline form-white mb-4">
-                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Usuario (email)"  required onblur="validarEmail(this.value)" />
+                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Usuario (email)"  required/>
                 </div>
                 
                 <div class="form-outline form-white mb-4">

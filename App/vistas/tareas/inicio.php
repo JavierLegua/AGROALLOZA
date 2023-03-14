@@ -5,28 +5,15 @@
 <div class="container">
     <h1>Tareas</h1>
 
-            <!-- <div class="row g-3 align-items justify-content-center mb-3 mt-3">
-                <div class="col-6">
-                    <input oninput="buscadorFiltrador()" type="text" name="buscador" id="buscador" class="form-control" aria-describedby="passwordHelpInline" placeholder="Buscador">
-                </div>
-            </div> -->
-
-            <!-- <div class="row g-3 align-items justify-content-center mb-3 mt-3">
-                <div class="col-2">
-                   <select name="completada" id="completada" onchange="filtrador()">
-                        <option value="">Seleccione una opción:</option>
-                        <option value="1">Tareas completadas</option>
-                        <option value="0">Tareas sin completar</option>
-                   </select> 
-                </div>
-            </div> -->
-
     <div class="">
             <div class="accordion" id="accordionExample">
                     <?php foreach($datos['tarea'] as $tareas): ?> <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tarea_<?php echo $tareas->idtarea ?>" aria-expanded="false" aria-controls="tarea_<?php echo $tareas->idtarea ?>">
                                 <?php echo $tareas->descripcion ?>
+                                <?php if($datos['tareasSinTerminar'] != '0' && $tareas->completado == '0'): ?>
+                                    &nbsp <span title="Tarea sin completar" class="badge rounded-pill badge-notification bg-danger justify-content-right">!</span>
+                                <?php endif ?> 
                             </button>
                         </h2>
                         <div id="tarea_<?php echo $tareas->idtarea ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">

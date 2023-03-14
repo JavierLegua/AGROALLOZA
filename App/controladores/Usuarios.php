@@ -68,7 +68,6 @@
                     'fecha_nacimiento' => trim($_POST['fecha_nac']),
                     'email' => trim($_POST['email']),
                     'direccion' => trim($_POST['direccion']),
-                    'salario' => trim($_POST['salario']),
                     'codigo_postal' => trim($_POST['cp']),
                     'clave' => trim($passCifrada),
                     'telefono' => trim($_POST['telefono']),

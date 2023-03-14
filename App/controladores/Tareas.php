@@ -24,12 +24,14 @@
             $campos = $this->tareaModelo->obtenerCampos();
             $aperos = $this->tareaModelo->obtenerAperos();
             $maquinas = $this->tareaModelo->obtenerMaquinas();
+            $tareasSinTerminar = $this->tareaModelo->obtenerTareasSinTerminar();
 
             $this->datos['tarea'] = $tareas;
             $this->datos['usuario'] = $encargados;
             $this->datos['campo'] = $campos;
             $this->datos['apero'] = $aperos;
             $this->datos['maquina'] = $maquinas;
+            $this->datos['tareasSinTerminar'] = $tareasSinTerminar;
 
             $tareasEncript = json_encode($tareas);
 

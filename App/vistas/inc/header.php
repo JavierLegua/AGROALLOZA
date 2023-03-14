@@ -138,7 +138,7 @@
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item dropdown final">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $datos['usuarioSesion']->nombre?>
                         </a>
                         <ul class="dropdown-menu">

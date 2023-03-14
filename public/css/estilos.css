@@ -156,10 +156,14 @@ a.negrita{
 }
 
 .admin{
-    background-color: darkgray;
+    background-color: moccasin;
     color: #109300  ;
     height: 100px;
     border-bottom: 1px solid;
+}
+
+.blanco{
+    color: white;
 }
 
 .active{

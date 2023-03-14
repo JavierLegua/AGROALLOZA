@@ -7,7 +7,7 @@
 
                 
 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/maquinas"><i class="bi bi-fuel-pump-fill iconsize"></i></a>
@@ -23,7 +23,7 @@
                 
 
                
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/aperos"><i class="bi bi-gear-wide-connected iconsize"></i></a>
@@ -40,7 +40,7 @@
 
 
                 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/campos"><i class="bi bi-map-fill iconsize"></i></a>
@@ -54,7 +54,7 @@
 
                     </div>
 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/tareas"><i class="bi bi-list-task iconsize"></i></a>
@@ -71,7 +71,7 @@
                 <div class="row mt-5 justify-content-around">
 
                 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                             <a class="imagen" href="<?php echo RUTA_URL?>/cosechas"><i class="bi bi-reception-3 iconsize"></i></a>
@@ -86,7 +86,7 @@
                 
 
 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/campanas"><i class='bi bi-minecart-loaded iconsize'></i></a>
@@ -100,7 +100,7 @@
 
                     </div>
 
-                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-6 col-xl-6 rounded">
+                    <div class="borde border p-0 tarjeta shadow mb-5 bg-white col-md-1 col-sm-4 col-xl-6 col-12 rounded">
 
                         <div class="card-header d-flex justify-content-center colortarjeta">
                         <a class="imagen" href="<?php echo RUTA_URL?>/colaboradores"><i class="bi bi-person-check-fill iconsize"></i></a>
