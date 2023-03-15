@@ -23,7 +23,7 @@
     <nav class="admin navbar navbar-expand-md fixed-top orden justufy-content-between">
 <?php endif ?>
 <?php if($datos['usuarioSesion']->rol_idrol == 3): ?>
-    <nav class="admin navbar navbar-expand-md fixed-top orden justufy-content-between">
+    <nav class="peon navbar navbar-expand-md fixed-top orden justufy-content-between">
 <?php endif ?>
 
 

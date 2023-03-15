@@ -8,7 +8,7 @@
 
     <?php foreach($datos['maquina'] as $maquinas): ?>
         <?php if($maquinas->idmaquina == $datos['id']):?>
-            <h3>Mantenimientos de <?php echo $maquinas->modelo ?></h3>
+            <h3>Averias de <?php echo $maquinas->modelo ?></h3>
         <?php endif ?>
     <?php endforeach ?>
 

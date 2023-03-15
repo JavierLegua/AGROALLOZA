@@ -84,6 +84,29 @@
                 </p>
             </div>
         </div>
+
+        <div class="container">
+        <div class="row">
+            <div class="col-4">
+                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalIngreso">
+                    Agregar ingreso
+                </button>
+            </div>
+
+            <div class="col-4">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalg">
+                    Agregar gasto
+                </button>
+            </div>
+
+            <div class="col-4">
+                <form action="<?php echo RUTA_URL ?>/balances/exportCSV" method="post">
+                    <button type="submit" class="btn btn-success">Exportar a CSV</button>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
         <div class="table-responsive">
             <h1>Ingresos</h1>
             <table class="table table-hover">
@@ -148,6 +171,18 @@
                                     
                                     case '2':
                                         $nombre = 'Venta';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Venta maquinaria';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Trabajos varios';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Pago salarios';
                                         break;
                                 }
                                 return $nombre;
@@ -215,28 +250,7 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalIngreso">
-                    Agregar ingreso
-                </button>
-            </div>
-
-            <div class="col-2">
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalg">
-                    Agregar gasto
-                </button>
-            </div>
-
-            <div class="col-2">
-                <form action="<?php echo RUTA_URL ?>/balances/exportCSV" method="post">
-                    <button type="submit" class="btn btn-success">Exportar a CSV</button>
-                </form>
-            </div>
-            <br>
-        </div>
-    </div>
+ 
 
     <div class="modal fade" id="modalIngreso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
             <div class="modal-dialog">

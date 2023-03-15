@@ -26,7 +26,7 @@
             //Obtenemos los usuarios y paginamos
 
 
-            $registrosPorPagina = 2;
+            $registrosPorPagina = 5;
             $pagina = intval($pagina + 1);
             $numUsuarios = $this->usuarioModelo->contarUsuarios();
 

@@ -8,7 +8,7 @@
 
     <?php foreach($datos['apero'] as $aperos): ?>
         <?php if($aperos->idapero == $datos['id']):?>
-            <h3>Mantenimientos de <?php echo $aperos->modelo ?></h3>
+            <h3>Averias de <?php echo $aperos->modelo ?></h3>
         <?php endif ?>
     <?php endforeach ?>
 

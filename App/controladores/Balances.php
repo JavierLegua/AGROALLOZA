@@ -138,7 +138,6 @@
             }
 
             public function exportCSV(){
-                // echo("hola");exit();
                 $this->balanceModelo->exportCSV();
             }
         }

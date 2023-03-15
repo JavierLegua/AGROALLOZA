@@ -65,7 +65,7 @@
                             <?php if($uruario->validado == 0): ?>
                                 <td>Activo</td>
                             <?php else: ?>
-                                <td>No activo</td>
+                                <td class="noActivo">No activo</td>
                             <?php endif ?> 
                             <td><?php echo $uruario->rol_nombre ?></td>
         <?php if (tienePrivilegios($datos['usuarioSesion']->rol_idrol,[1])):?>
