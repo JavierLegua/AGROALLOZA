@@ -40,6 +40,13 @@
 .noActivo{
     color: red ;
 }
+.Activo{
+    color: green;
+}
+
+.cuerpo{
+    height: 300px;
+}
 
 
 

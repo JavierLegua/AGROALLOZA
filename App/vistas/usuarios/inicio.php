@@ -63,7 +63,7 @@
                             <td><?php echo $uruario->email ?></td>
                             <td><?php echo $uruario->telefono ?></td>
                             <?php if($uruario->validado == 0): ?>
-                                <td>Activo</td>
+                                <td class="Activo">Activo</td>
                             <?php else: ?>
                                 <td class="noActivo">No activo</td>
                             <?php endif ?> 

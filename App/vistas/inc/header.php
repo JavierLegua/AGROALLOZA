@@ -53,6 +53,14 @@
                         <?php endif ?>
                     </li>
 
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/encargado">Encargado</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/encargado">Encargado</a>
+                        <?php endif ?>
+                    </li>
+
             
 <?php endif ?>
 
@@ -113,6 +121,14 @@
                         <?php endif ?>
                     </li>
 
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php endif ?>
+                    </li>
+
 
 <?php endif ?>
 
@@ -134,8 +150,17 @@
                         <?php endif ?>
                     </li>
 
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php endif ?>
+                    </li>
+
 <?php endif ?>
                 </ul>
+                
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item dropdown final">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -147,8 +172,6 @@
                             <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/login/logout">LogOut</a></li>
                         </ul>
                     </li>
-                    
-
                 </ul>
             </div>
         </div>
