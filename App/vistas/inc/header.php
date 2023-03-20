@@ -27,7 +27,7 @@
 <?php endif ?>
 
 
-        <a class="navbar-brand" href="<?php echo RUTA_URL?>/"><img class="menu" src="<?php echo RUTA_URL?>/public/img/agroalloza_sinfondo.png" width="100" height="100"></a>
+        <a class="navbar-brand" href="<?php echo RUTA_URL?>/"><img class="menu" src="<?php echo RUTA_URL?>/public/img/agroalloza_sinfondo.png" width="75" height="75"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

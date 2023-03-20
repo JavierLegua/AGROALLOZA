@@ -2,8 +2,9 @@
     <main class="flex-shrink-0 ">
         <div class="container">
 
+        <!-- <h1>Encargado</h1> -->
         
-                <div class="row mt-5 justify-content-around">
+                <div class="row justify-content-around">
 
                 
 

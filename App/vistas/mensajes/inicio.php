@@ -10,7 +10,7 @@
                 <input list="usuarios" name="usuario" class="form-control" id="usuario" placeholder="Selecciona el usuario:">
                 <datalist id="usuarios">
                     <?php foreach($datos['usuario'] as $usuarios): ?>
-                        <option id="<?php echo $usuarios->email ?>" value="<?php echo $usuarios->email ?>"><?php echo $usuarios->nombre ?></option>
+                        <option id="<?php echo $usuarios->email ?>" autocomplete="off" value="<?php echo $usuarios->email ?>"><?php echo $usuarios->nombre ?></option>
                     <?php endforeach ?>
                 </datalist>
                 <br>
