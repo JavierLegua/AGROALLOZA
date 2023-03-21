@@ -6,7 +6,7 @@
 
     <h1>Cosechas</h1>
 
-<div class="row g-3 align-items justify-content-center mb-3 mt-3">
+<div class="row g-3 align-items justify-content-center mb-3">
                 <div class="col-2">
                 <form action="<?php echo RUTA_URL ?>/Cosechas/filtroCampana/" method="post">
         <br>

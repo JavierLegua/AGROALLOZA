@@ -106,6 +106,7 @@
             <br>
             </div>
         </div>
+        <br>
         <div class="table-responsive">
             <h1>Ingresos</h1>
             <table class="table table-hover">
@@ -262,23 +263,23 @@
                 
                     <form method="post" action="<?php echo RUTA_URL ?>/balances/agregarIngreso" id="formNuevoIngreso">
                         <div class="mt-3 mb-3">
-                            <label for="concepto">concepto: <sup>*</sup></label>
+                            <label for="concepto">Concepto: <sup>*</sup></label>
                             <input type="text" name="concepto" id="concepto" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="fecha">fecha: <sup>*</sup></label>
+                            <label for="fecha">Fecha: <sup>*</sup></label>
                             <input type="date" name="fecha" id="fecha" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="banco">banco: <sup>*</sup></label>
+                            <label for="banco">Banco: <sup>*</sup></label>
                             <input type="text" name="banco" id="banco" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="cantidad">cantidad: <sup>*</sup></label>
+                            <label for="cantidad">Cantidad: <sup>*</sup></label>
                             <input type="text" name="cantidad" id="cantidad" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="tipo">Tipo: <sup>*</sup></label>
+                            <label for="tipo">Tipo: <sup>*</sup></label><br>
                             <select name="tipo" id="tipo">
                                 <option value="0">Seleccione</option>
                                     <?php foreach ($datos["tipo"] as $tipos): ?>
@@ -306,19 +307,19 @@
                 
                     <form method="post" action="<?php echo RUTA_URL ?>/balances/agregarGasto" id="formNuevoGasto">
                         <div class="mt-3 mb-3">
-                            <label for="concepto">concepto: <sup>*</sup></label>
+                            <label for="concepto">Concepto: <sup>*</sup></label>
                             <input type="text" name="concepto" id="concepto" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="fecha">fecha: <sup>*</sup></label>
+                            <label for="fecha">Fecha: <sup>*</sup></label>
                             <input type="date" name="fecha" id="fecha" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="banco">banco: <sup>*</sup></label>
+                            <label for="banco">Banco: <sup>*</sup></label>
                             <input type="text" name="banco" id="banco" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="cantidad">cantidad: <sup>*</sup></label>
+                            <label for="cantidad">Cantidad: <sup>*</sup></label>
                             <input type="text" name="cantidad" id="cantidad" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">

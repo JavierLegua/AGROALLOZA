@@ -55,7 +55,7 @@
                 <div class="borde border  p-0 tarjeta shadow mb-5 bg-white rounded">
                     
                     <div class="card-header d-flex justify-content-center colortarjeta">
-                    <a class="imagen" href="<?php echo RUTA_URL?>/balances"><i class="bi bi-person-vcard iconsize"></i></a>
+                    <a class="imagen" href="<?php echo RUTA_URL?>/encargado"><i class="bi bi-person-vcard iconsize"></i></a>
                     </div>
 
                     <div class="card-body d-flex justify-content-around">

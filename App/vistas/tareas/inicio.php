@@ -21,15 +21,19 @@
                             <div class="d-flex justify-content-around">
                                 <div class="me-2">
                                 <div class="mb-3">
+                                        <label for="">Descripción:</label>
                                         <input type="text" name="descripcion" id="descripcion" class="form-control form-control-lg" placeholder="<?php echo $tareas->descripcion ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Observaciones:</label>
                                         <input type="text" name="observaciones" id="observaciones" class="form-control form-control-lg" maxlength="9" autocomplete="off" placeholder="<?php echo $tareas->observaciones ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Coste:</label>
                                         <input type="text" name="coste" id="coste" class="form-control form-control-lg" placeholder="<?php echo $tareas->coste ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Estado:</label>
                                         <?php if($tareas->completado == 1): ?>
                                             <input type="text" name="Completada" id="Completada" class="form-control form-control-lg" autocomplete="off" placeholder="Completada" disabled>
                                         <?php else:?>
@@ -39,6 +43,7 @@
                                 </div>
                                 <div>
                                     <div class="mb-3">
+                                    <label for="">Encargado:</label>
                                         <?php foreach($datos['usuario'] as $usuarios): ?>
                                             <?php if($usuarios->idusuario == $tareas->encargado):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $usuarios->nombre ?>" disabled>
@@ -47,6 +52,7 @@
                                     </div>
 
                                     <div class="mb-3">
+                                    <label for="">Campo:</label>
                                         <?php foreach($datos['campo'] as $campos): ?>
                                             <?php if($campos->idcampo == $tareas->campo_idcampo):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $campos->nombre ?>" disabled>
@@ -54,6 +60,7 @@
                                         <?php endforeach;?>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Máquina:</label>
                                         <?php foreach($datos['maquina'] as $maquinas): ?>
                                             <?php if($maquinas->idmaquina == $tareas->maquina_idmaquina):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $maquinas->modelo ?>" disabled>
@@ -61,6 +68,7 @@
                                         <?php endforeach;?>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Apero:</label>
                                         <?php foreach($datos['apero'] as $aperos): ?>
                                             <?php if($aperos->idapero == $tareas->apero_idapero):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $aperos->modelo ?>" disabled>

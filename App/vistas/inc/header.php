@@ -152,9 +152,9 @@
 
                     <li class="nav-item">
                         <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
-                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajes">Mensajeria</a>
                         <?php else: ?>
-                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajes">Mensajeria</a>
                         <?php endif ?>
                     </li>
 
