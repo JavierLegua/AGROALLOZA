@@ -18,25 +18,16 @@
     
             }
     
-            public function index($pagina = 0){
-    
-                $registrosPorPagina = 2;
-                $pagina = intval($pagina + 1);
-                $numCampos = $this->campoModelo->contarCampos();
-
-                $numPagTotal = ceil($numCampos / $registrosPorPagina);
-
-                $min = ($registrosPorPagina * $pagina) - ($registrosPorPagina);
-
-                // $camposEncript = json_encode($campos1);
-
+            public function index(){
                 
                 $campos = $this->campoModelo->ObtenerCampos();
-                $campos1 = $this->campoModelo->ObtenerCampos(-1, 0);
-                $this->numPaginas = $numPagTotal;
                 $this->datos['campo'] = $campos;
+
+                $camposEncript = json_encode($campos);
+
+                $this->camEncript['campos'] = $camposEncript;
     
-                $this->vista('campos/inicio',$this->datos, $this->numPaginas);
+                $this->vista('campos/inicio',$this->datos, $this->camEncript);
     
             }
 

@@ -63,9 +63,9 @@
                             <td><?php echo $uruario->email ?></td>
                             <td><?php echo $uruario->telefono ?></td>
                             <?php if($uruario->validado == 0): ?>
-                                <td>Activo</td>
+                                <td class="Activo">Activo</td>
                             <?php else: ?>
-                                <td>No activo</td>
+                                <td class="noActivo">No activo</td>
                             <?php endif ?> 
                             <td><?php echo $uruario->rol_nombre ?></td>
         <?php if (tienePrivilegios($datos['usuarioSesion']->rol_idrol,[1])):?>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="modal-body">
                 
-                    <form method="post" action="<?php echo RUTA_URL ?>/Inicio/agregar" id="formNuevoUsuario">
+                    <form method="post" action="<?php echo RUTA_URL ?>/usuarios/agregar" id="formNuevoUsuario">
                       <div class="d-flex justify-content-around">
                         <div class="me-2">
                           <div class="mb-3">
@@ -243,6 +243,14 @@
                             </div>
                             <div class="mb-3">
                                 <input type="email" name="email" id="email" class="form-control form-control-lg" autocomplete="off" onblur="validarEmail(this.value)" placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <select name="rol" id="rol" class="form-select form-select-lg">
+                                    <option value="">Seleccione:</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Encargado</option>
+                                    <option value="3">Peón</option>
+                                </select>
                             </div>
                           </div>
                           <div>
@@ -259,7 +267,7 @@
                             <div class="mb-3">
                                 <input type="text" name="telefono" id="telefono" class="form-control form-control-lg" placeholder="Teléfono">
                             </div>
-                          </div>
+                        </div>
                         </div>
                         <input type="submit" class="btn btn-success" value="<?php echo $accion ?> Usuario" onclick="return confirm('¿Seguro que quieres <?php echo $accion ?> este usuario?');">
                     </form>

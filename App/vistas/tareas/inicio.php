@@ -5,28 +5,15 @@
 <div class="container">
     <h1>Tareas</h1>
 
-            <!-- <div class="row g-3 align-items justify-content-center mb-3 mt-3">
-                <div class="col-6">
-                    <input oninput="buscadorFiltrador()" type="text" name="buscador" id="buscador" class="form-control" aria-describedby="passwordHelpInline" placeholder="Buscador">
-                </div>
-            </div> -->
-
-            <!-- <div class="row g-3 align-items justify-content-center mb-3 mt-3">
-                <div class="col-2">
-                   <select name="completada" id="completada" onchange="filtrador()">
-                        <option value="">Seleccione una opción:</option>
-                        <option value="1">Tareas completadas</option>
-                        <option value="0">Tareas sin completar</option>
-                   </select> 
-                </div>
-            </div> -->
-
     <div class="">
             <div class="accordion" id="accordionExample">
                     <?php foreach($datos['tarea'] as $tareas): ?> <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tarea_<?php echo $tareas->idtarea ?>" aria-expanded="false" aria-controls="tarea_<?php echo $tareas->idtarea ?>">
                                 <?php echo $tareas->descripcion ?>
+                                <?php if($datos['tareasSinTerminar'] != '0' && $tareas->completado == '0'): ?>
+                                    &nbsp <span title="Tarea sin completar" class="badge rounded-pill badge-notification bg-danger justify-content-right">!</span>
+                                <?php endif ?> 
                             </button>
                         </h2>
                         <div id="tarea_<?php echo $tareas->idtarea ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -34,15 +21,19 @@
                             <div class="d-flex justify-content-around">
                                 <div class="me-2">
                                 <div class="mb-3">
+                                        <label for="">Descripción:</label>
                                         <input type="text" name="descripcion" id="descripcion" class="form-control form-control-lg" placeholder="<?php echo $tareas->descripcion ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Observaciones:</label>
                                         <input type="text" name="observaciones" id="observaciones" class="form-control form-control-lg" maxlength="9" autocomplete="off" placeholder="<?php echo $tareas->observaciones ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Coste:</label>
                                         <input type="text" name="coste" id="coste" class="form-control form-control-lg" placeholder="<?php echo $tareas->coste ?>" disabled>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Estado:</label>
                                         <?php if($tareas->completado == 1): ?>
                                             <input type="text" name="Completada" id="Completada" class="form-control form-control-lg" autocomplete="off" placeholder="Completada" disabled>
                                         <?php else:?>
@@ -52,6 +43,7 @@
                                 </div>
                                 <div>
                                     <div class="mb-3">
+                                    <label for="">Encargado:</label>
                                         <?php foreach($datos['usuario'] as $usuarios): ?>
                                             <?php if($usuarios->idusuario == $tareas->encargado):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $usuarios->nombre ?>" disabled>
@@ -60,6 +52,7 @@
                                     </div>
 
                                     <div class="mb-3">
+                                    <label for="">Campo:</label>
                                         <?php foreach($datos['campo'] as $campos): ?>
                                             <?php if($campos->idcampo == $tareas->campo_idcampo):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $campos->nombre ?>" disabled>
@@ -67,6 +60,7 @@
                                         <?php endforeach;?>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Máquina:</label>
                                         <?php foreach($datos['maquina'] as $maquinas): ?>
                                             <?php if($maquinas->idmaquina == $tareas->maquina_idmaquina):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $maquinas->modelo ?>" disabled>
@@ -74,6 +68,7 @@
                                         <?php endforeach;?>
                                     </div>
                                     <div class="mb-3">
+                                    <label for="">Apero:</label>
                                         <?php foreach($datos['apero'] as $aperos): ?>
                                             <?php if($aperos->idapero == $tareas->apero_idapero):?>
                                                 <input type="text" name="encargado" id="encargado" class="form-control form-control-lg" placeholder="<?php echo $aperos->modelo ?>" disabled>

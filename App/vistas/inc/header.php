@@ -23,11 +23,11 @@
     <nav class="admin navbar navbar-expand-md fixed-top orden justufy-content-between">
 <?php endif ?>
 <?php if($datos['usuarioSesion']->rol_idrol == 3): ?>
-    <nav class="admin navbar navbar-expand-md fixed-top orden justufy-content-between">
+    <nav class="peon navbar navbar-expand-md fixed-top orden justufy-content-between">
 <?php endif ?>
 
 
-        <a class="navbar-brand" href="<?php echo RUTA_URL?>/"><img class="menu" src="<?php echo RUTA_URL?>/public/img/agroalloza_sinfondo.png" width="100" height="100"></a>
+        <a class="navbar-brand" href="<?php echo RUTA_URL?>/"><img class="menu" src="<?php echo RUTA_URL?>/public/img/agroalloza_sinfondo.png" width="75" height="75"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,6 +50,14 @@
                             <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/balances">Balance</a>
                         <?php else: ?>
                             <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/balances">Balance</a>
+                        <?php endif ?>
+                    </li>
+
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/encargado">Encargado</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/encargado">Encargado</a>
                         <?php endif ?>
                     </li>
 
@@ -113,6 +121,14 @@
                         <?php endif ?>
                     </li>
 
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajeria">Mensajeria</a>
+                        <?php endif ?>
+                    </li>
+
 
 <?php endif ?>
 
@@ -134,11 +150,20 @@
                         <?php endif ?>
                     </li>
 
+                    <li class="nav-item">
+                        <?php if (isset($datos['menuActivo']) && $datos['menuActivo'] == 1 ): ?>
+                            <a class="nav-link color1" aria-current="page" href="<?php echo RUTA_URL ?>/mensajes">Mensajeria</a>
+                        <?php else: ?>
+                            <a class="nav-link" aria-current="page" href="<?php echo RUTA_URL ?>/mensajes">Mensajeria</a>
+                        <?php endif ?>
+                    </li>
+
 <?php endif ?>
                 </ul>
+                
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item dropdown final">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $datos['usuarioSesion']->nombre?>
                         </a>
                         <ul class="dropdown-menu">
@@ -147,8 +172,6 @@
                             <li><a class="dropdown-item" href="<?php echo RUTA_URL ?>/login/logout">LogOut</a></li>
                         </ul>
                     </li>
-                    
-
                 </ul>
             </div>
         </div>

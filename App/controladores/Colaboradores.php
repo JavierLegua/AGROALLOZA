@@ -22,8 +22,12 @@
     
                 $colaboradores = $this->colaboradorModelo->obtenerColab();
                 $this->datos['colaborador'] = $colaboradores;
+
+                $colabEncript = json_encode($colaboradores);
+
+                $this->colabEncript['colaboradores'] = $colabEncript;
     
-                $this->vista('colaboradores/inicio',$this->datos);
+                $this->vista('colaboradores/inicio',$this->datos, $this->colabEncript);
     
             }
 

@@ -87,9 +87,10 @@
                 $to = $_POST['emailRec'];
                 //$email = "javierlegua14@gmail.com";
                 //$to = "javierlegua14@gmail.com";
-                $nombreTo = "Socio";
-                $asunto = "Recuperación contraseña";
-                $cuerpo = "Su contraseña temporal es: $pass";
+                $nombreTo = "Usuario";
+                $asunto = "Recuperación de contraseña solicitada en AGROALLOZA";
+                $cuerpo = "<p>Estimado usuario, hemos visto que ha solicitado restablecer su contraseña para poder acceder a la aplicación.</p><br><p>A continuación le adjuntamos su contraseña generada la cual debera cambiar
+                una vez ingrese a la aplicación.</p><br><p>Su nueva contraseña temporal es: <strong>$pass</strong></p><br><p>Un saludo,</p><br><p><strong><em>Equipo de gestión de AGROALLOZA</em></strong></p>";
                 // echo "hola";exit();
                 $respuesta = EnviarEmail::sendEmail($to,$nombreTo,$asunto,$cuerpo);
 

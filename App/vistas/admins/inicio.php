@@ -2,14 +2,16 @@
     <main class="flex-shrink-0">
 
 
+
         <div class="container">
         
+        <!-- <h1>Administrador</h1> -->
 
-            <div class="row justify-content-around justify-content-center align-items-center mt-5"> 
+            <div class="row justify-content-around justify-content-center align-items-center "> 
     
     <!-- ----------------------- -->
 
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 col-md-3 col-sm-12 d-flex justify-content-center">
 
             <div class="borde border p-0 tarjeta shadow mb-5 bg-white rounded">
                 
@@ -32,6 +34,7 @@
                 
                 
     <!-- ----------------------- -->
+                <div class="col-md-3 col-sm-12 col-md-3 col-sm-12 d-flex justify-content-center">
                 <div class="borde border p-0 tarjeta shadow mb-5 bg-white rounded">
                     
                     <div class="card-header d-flex justify-content-center colortarjeta">
@@ -44,13 +47,15 @@
                         </p>
                     </div>
                 </div>
+                </div>
 
     <!-- ----------------------- -->
 
+                <div class="col-md-3 col-sm-12 col-md-3 col-sm-12 d-flex justify-content-center">
                 <div class="borde border  p-0 tarjeta shadow mb-5 bg-white rounded">
                     
                     <div class="card-header d-flex justify-content-center colortarjeta">
-                    <a class="imagen" href="<?php echo RUTA_URL?>/balances"><i class="bi bi-person-vcard iconsize"></i></a>
+                    <a class="imagen" href="<?php echo RUTA_URL?>/encargado"><i class="bi bi-person-vcard iconsize"></i></a>
                     </div>
 
                     <div class="card-body d-flex justify-content-around">
@@ -58,6 +63,7 @@
                             <a class="colorb" href="<?php echo RUTA_URL?>/encargado"><h4>Encargado</h4></a>
                         </p>
                     </div>
+                </div>
                 </div>
                 
    

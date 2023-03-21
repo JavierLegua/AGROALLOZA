@@ -149,11 +149,11 @@
             //Lo mismo que ingresos pero con gastos
             $headerGas = array('GASTOS');
             fputcsv($f, $headerGas, $delimiter); 
-            $fieldsGas = array('ID', 'Concepto', 'Cuenta destino', 'Fecha', 'Cantidad', 'Banco', 'Tipo');
+            $fieldsGas = array('ID', 'Concepto', 'Fecha', 'Cantidad', 'Banco', 'Tipo', 'Cuenta destino');
             fputcsv($f, $fieldsGas, $delimiter); 
 
             foreach($gastos as $row){
-                $lineData = array($row->idgastos, $row->concepto, $row->cuenta_destino, $row->fecha, $row->cantidad, $row->banco, $row->tipo);
+                $lineData = array($row->idgastos, $row->concepto, $row->fecha, $row->cantidad, $row->banco, $row->tipo, $row->cuenta_destino);
                 fputcsv($f, $lineData, $delimiter);
             }
 

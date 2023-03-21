@@ -23,10 +23,14 @@
                 $campanas = $this->campanaModelo->obtenerCampanas();
                 $this->datos['campana'] = $campanas;
 
+                $campEncript = json_encode($campanas);
+
+                $this->campEncript['campanas'] = $campEncript;
+
                 $encargados = $this->campanaModelo->obtenerEncargados();
                 $this->datos['encargado'] = $encargados;
     
-                $this->vista('campanas/inicio',$this->datos);
+                $this->vista('campanas/inicio',$this->datos, $this->campEncript);
     
             }
 

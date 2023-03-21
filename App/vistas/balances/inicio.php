@@ -45,11 +45,12 @@
         <br>
     <div>
         <div class="d-flex justify-content-around">
-            <div>
-                <h1>Total ingresos:</h1>
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="col-12">Total ingresos:</h1>
                 <p class="ingresos">+ 
                 <?php foreach($datos['ingreso'] as $ingresos): 
                     $balanceTotal += $ingresos->cantidad;
+                    json_encode($balanceTotal);
                 
                     $balanceIngresos += $ingresos->cantidad; 
                     endforeach;
@@ -58,8 +59,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>Total gastos:</h1>
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="col-12">Total gastos:</h1>
                 <p class="gastos">- 
                 <?php foreach($datos['gasto'] as $gastos): 
                     $balanceTotal -= $gastos->cantidad;
@@ -71,9 +72,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>Total balance:</h1>
-                <p class="">
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="col-12">Total balance:</h1>
                     <?php if ($balanceTotal >= 0): ?>
                         <p class="ingresos" id="balanceTotal">+<?php echo $balanceTotal."€" ?></p>
                         <?php endif ?>
@@ -81,9 +81,32 @@
                     <?php if ($balanceTotal < 0): ?>
                         <p class="gastos" id="balanceTotal">-<?php echo $balanceTotal."€" ?></p>
                         <?php endif ?>
-                </p>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalIngreso">
+                        Agregar ingreso
+                    </button>
+                </div>
+
+                <div class="col-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalg">
+                        Agregar gasto
+                    </button>
+                </div>
+
+                <div class="col-4 d-flex justify-content-center">
+                    <form action="<?php echo RUTA_URL ?>/balances/exportCSV" method="post">
+                        <button type="submit" class="btn btn-success">Exportar a CSV</button>
+                    </form>
+                </div>
+            <br>
+            </div>
+        </div>
+        <br>
         <div class="table-responsive">
             <h1>Ingresos</h1>
             <table class="table table-hover">
@@ -148,6 +171,18 @@
                                     
                                     case '2':
                                         $nombre = 'Venta';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Venta maquinaria';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Trabajos varios';
+                                        break;
+
+                                    case '3':
+                                        $nombre = 'Pago salarios';
                                         break;
                                 }
                                 return $nombre;
@@ -215,28 +250,7 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalIngreso">
-                    Agregar ingreso
-                </button>
-            </div>
-
-            <div class="col-2">
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalg">
-                    Agregar gasto
-                </button>
-            </div>
-
-            <div class="col-2">
-                <form action="<?php echo RUTA_URL ?>/balances/exportCSV" method="post">
-                    <button type="submit" class="btn btn-success">Exportar a CSV</button>
-                </form>
-            </div>
-            <br>
-        </div>
-    </div>
+ 
 
     <div class="modal fade" id="modalIngreso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
             <div class="modal-dialog">
@@ -249,23 +263,23 @@
                 
                     <form method="post" action="<?php echo RUTA_URL ?>/balances/agregarIngreso" id="formNuevoIngreso">
                         <div class="mt-3 mb-3">
-                            <label for="concepto">concepto: <sup>*</sup></label>
+                            <label for="concepto">Concepto: <sup>*</sup></label>
                             <input type="text" name="concepto" id="concepto" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="fecha">fecha: <sup>*</sup></label>
+                            <label for="fecha">Fecha: <sup>*</sup></label>
                             <input type="date" name="fecha" id="fecha" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="banco">banco: <sup>*</sup></label>
+                            <label for="banco">Banco: <sup>*</sup></label>
                             <input type="text" name="banco" id="banco" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="cantidad">cantidad: <sup>*</sup></label>
+                            <label for="cantidad">Cantidad: <sup>*</sup></label>
                             <input type="text" name="cantidad" id="cantidad" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="tipo">Tipo: <sup>*</sup></label>
+                            <label for="tipo">Tipo: <sup>*</sup></label><br>
                             <select name="tipo" id="tipo">
                                 <option value="0">Seleccione</option>
                                     <?php foreach ($datos["tipo"] as $tipos): ?>
@@ -293,19 +307,19 @@
                 
                     <form method="post" action="<?php echo RUTA_URL ?>/balances/agregarGasto" id="formNuevoGasto">
                         <div class="mt-3 mb-3">
-                            <label for="concepto">concepto: <sup>*</sup></label>
+                            <label for="concepto">Concepto: <sup>*</sup></label>
                             <input type="text" name="concepto" id="concepto" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="fecha">fecha: <sup>*</sup></label>
+                            <label for="fecha">Fecha: <sup>*</sup></label>
                             <input type="date" name="fecha" id="fecha" class="form-control form-control-lg">
                         </div>
                         <div class="mb-3">
-                            <label for="banco">banco: <sup>*</sup></label>
+                            <label for="banco">Banco: <sup>*</sup></label>
                             <input type="text" name="banco" id="banco" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="cantidad">cantidad: <sup>*</sup></label>
+                            <label for="cantidad">Cantidad: <sup>*</sup></label>
                             <input type="text" name="cantidad" id="cantidad" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
@@ -343,12 +357,9 @@ function entreFechas(){
         ini = new Date("2000/01/01")
     }
 
-    
     var fin = new Date(document.getElementById("fecha_max").value)
     var ingresos = <?php echo json_encode($datos['ingreso']); ?>;
     var gastos = <?php echo json_encode($datos['gasto']); ?>;
-
-    var balanceTotal = 0
 
     // console.log(gastos)
 
@@ -362,20 +373,16 @@ function entreFechas(){
     // }
 
     document.getElementById("tablebody").innerHTML = "";
-    document.getElementById("balanceTotal").innerHTML = "";
 
     for (let i = 0; i < ingresos.length; i++) {
         fecha = ingresos[i].fecha
         date = new Date(fecha)
-        console.log(date)
-        console.log(ini)
         if (ini<=date && date<=fin) {
 
-            balanceTotal += ingresos[i].cantidad
+            var ingreso = parseInt(ingresos[i].cantidad)
+
 
             var nUsu = ingresos[i].idingresos ;      
-                    console.log(nUsu);
-                    console.log(ingresos[i].concepto);
 
                     var tr = document.createElement("tr")
                     var td = document.createElement("td")
@@ -435,11 +442,7 @@ function entreFechas(){
         
         fecha = gastos[i].fecha
         date = new Date(fecha)
-        console.log(date)
-        console.log(ini)
         if (ini<=date && date<=fin) {
-
-            balanceTotal -= gastos[i].cantidad
 
 
             var nUsu = gastos[i].idgastos ;      
@@ -505,10 +508,6 @@ function entreFechas(){
 
     }
 
-
-    document.getElementById("balanceTotal").innerHTML = balanceTotal;
-
-
 }
 
 function filtrarTipo(){
@@ -523,22 +522,17 @@ function filtrarTipo(){
          ini = new Date("2000/01/01");
     }
 
-    var balanceTotal = 0
 
 
     // console.log(tipo)
 
     document.getElementById("tablebody").innerHTML = "";
-    document.getElementById("balanceTotal").innerHTML = "";
 
     for (let i = 0; i < ingresos.length; i++) {
         fecha = ingresos[i].fecha
         date = new Date(fecha)
-        console.log(date)
-        console.log(ini)
-        if (ini<=date && date<=fin && tipo==ingresos[i].tipo) {
 
-            balanceTotal += ingresos[i].cantidad
+        if (ini<=date && date<=fin && tipo==ingresos[i].tipo) {
 
             var nUsu = ingresos[i].idingresos ;      
                     console.log(nUsu);
@@ -602,11 +596,8 @@ function filtrarTipo(){
         
         fecha = gastos[i].fecha
         date = new Date(fecha)
-        console.log(date)
-        // console.log(ini)
-        if (ini<=date && date<=fin && tipo==gastos[i].tipo) {
 
-            balanceTotal -= gastos[i].cantidad
+        if (ini<=date && date<=fin && tipo==gastos[i].tipo) {
 
 
             var nUsu = gastos[i].idgastos ;      
@@ -673,7 +664,6 @@ function filtrarTipo(){
     }
 
 
-    document.getElementById("balanceTotal").innerHTML = balanceTotal;
 
 
 }

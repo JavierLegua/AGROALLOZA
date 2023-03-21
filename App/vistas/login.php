@@ -29,7 +29,7 @@
               <form method="post">
 
                 <div class="form-outline form-white mb-4">
-                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Usuario (email)"  required onblur="validarEmail(this.value)" />
+                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Usuario (email)"  required/>
                 </div>
                 
                 <div class="form-outline form-white mb-4">
@@ -82,8 +82,8 @@
     <div class="text-center">
       <button type="button" class="btn  btn-lg px-5  btn-primary text-center " data-bs-toggle="modal" data-bs-target="#exampleModal1">Registrate</button>
     </div>
-
-    <p class="text-center">Aplicación desarrollada por <a class="color1" href="https://www.instagram.com/javierlegua14/" target="_blank">Javier Legua</a> en <a class="color1" href="https://www.google.com/maps/place/44509+Alloza,+Teruel/@40.9687655,-0.5369158,15z/data=!3m1!4b1!4m5!3m4!1s0xd5f21f77560b977:0xe29dd448d56b6205!8m2!3d40.9677348!4d-0.529961" target="_blank">Alloza, Teruel</a></p>
+      <br>
+    <!-- <p class="text-center">Aplicación desarrollada por <a class="color1" href="https://www.instagram.com/javierlegua14/" target="_blank">Javier Legua</a> en <a class="color1" href="https://www.google.com/maps/place/44509+Alloza,+Teruel/@40.9687655,-0.5369158,15z/data=!3m1!4b1!4m5!3m4!1s0xd5f21f77560b977:0xe29dd448d56b6205!8m2!3d40.9677348!4d-0.529961" target="_blank">Alloza, Teruel</a></p> -->
 
       
     </div>

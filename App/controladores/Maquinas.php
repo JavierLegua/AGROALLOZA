@@ -23,7 +23,11 @@
             $maquinas = $this->maquinaModelo->obtenerMaquinas();
             $this->datos['maquina'] = $maquinas;
 
-            $this->vista('maquinas/inicio',$this->datos);
+            $maEncript = json_encode($maquinas);
+
+            $this->maEncript['maquinas'] = $maEncript;
+
+            $this->vista('maquinas/inicio',$this->datos, $this->maEncript);
 
         }
 

@@ -41,8 +41,8 @@
        
             // print_r($datos);exit();
 
-            $this->db->query("INSERT INTO usuario (nombre ,DNI, fecha_nacimiento, email, direccion, salario, codigo_postal, clave, telefono, validado, rol_idrol) 
-                                        VALUES (:nombre, :DNI, :fecha_nacimiento, :email, :direccion, :salario, :codigo_postal, :clave, :telefono, :validado, :rol_idrol)");
+            $this->db->query("INSERT INTO usuario (nombre ,DNI, fecha_nacimiento, email, direccion, codigo_postal, clave, telefono, validado, rol_idrol) 
+                                        VALUES (:nombre, :DNI, :fecha_nacimiento, :email, :direccion, :codigo_postal, :clave, :telefono, :validado, :rol_idrol)");
 
             //vinculamos los valores
             $this->db->bind(':nombre',$datos['nombreUsuario']);
@@ -50,7 +50,6 @@
             $this->db->bind(':fecha_nacimiento',$datos['fecha_nacimiento']);
             $this->db->bind(':email',$datos['email']);
             $this->db->bind(':direccion',$datos['direccion']);
-            $this->db->bind(':salario',$datos['salario']);
             $this->db->bind(':codigo_postal',$datos['codigo_postal']);
             $this->db->bind(':clave',$datos['clave']);
             $this->db->bind(':telefono',$datos['telefono']);

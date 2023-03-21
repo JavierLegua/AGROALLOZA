@@ -13,6 +13,12 @@
             return $this->db->registros();
         }
 
+        public function obtenerTareasSinTerminar(){
+            $this->db->query("SELECT * FROM tarea WHERE completado = 0"); 
+
+            return $this->db->rowCount();
+        }
+
         public function obtenerCampos(){
             $this->db->query("SELECT * FROM campo"); 
 

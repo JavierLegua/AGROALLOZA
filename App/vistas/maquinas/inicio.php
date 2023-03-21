@@ -1,7 +1,7 @@
 <?php require_once RUTA_APP.'/vistas/inc/header.php'?>
 <main class="flex-shrink-0">
 
-<div class="container">
+    <div class="container">
 
             <h1>Máquinas</h1>
             <!-- BUSCADOR -->
@@ -116,8 +116,88 @@
             </div>
             </div>
         </div>
+    </div>
+
 
 </main>
+
+<script>
+
+        function buscadorFiltrador(){
+            var palabra = document.getElementById("buscadorpalabra").value;
+            let maquinas = '<?php echo $this->maEncript['maquinas'];  ?>'
+
+            let maquinasDecod = JSON.parse(maquinas)
+        
+            document.getElementById("tablebody").innerHTML = "";
+
+            for (let i = 0; i < maquinasDecod.length; i++) {
+                if (palabra == "") {
+                    //escribir la tabla con todos los usuarios
+                    //location.reload();
+                    window.location.href="<?php echo RUTA_URL?>/maquinas ?>";
+
+
+                } else if(maquinasDecod[i].modelo.toLowerCase().includes(palabra.toLowerCase()) || maquinasDecod[i].matricula.toLowerCase().includes(palabra.toLowerCase())) {
+
+                    var tr = document.createElement("tr")
+                    var td = document.createElement("td")
+
+                    
+
+                    var contenido = document.createTextNode(maquinasDecod[i].modelo)
+                    td.appendChild(contenido)
+                    tr.appendChild(td)
+
+                    var td1 = document.createElement("td")
+                    var contenido1 = document.createTextNode(maquinasDecod[i].num_horas)
+                    td1.appendChild(contenido1)
+                    tr.appendChild(td1)
+
+                    var td3 = document.createElement("td")
+                    var contenido3 = document.createTextNode(maquinasDecod[i].matricula)
+                    td3.appendChild(contenido3)
+                    tr.appendChild(td3)
+
+                    var td6 = document.createElement("td")
+
+                    var tc = "text-center"
+                    td6.setAttribute("class", tc)
+
+                    var a2 = document.createElement("button")
+                    var icon = document.createElement("i") 
+                    var iclase = "bi bi-pencil"
+                    icon.setAttribute("class", iclase)
+                    var contenido6 = document.createTextNode(icon)
+                    a2.appendChild(icon)
+                    var btn2 = "btn btn-warning"
+                    a2.setAttribute("class", btn2)
+                    a2.setAttribute("onclick", "crearmodalEditar("+maquinasDecod[i].idusuario+")")
+                    td6.appendChild(a2)
+                    
+
+                    var a3 = document.createElement("button")
+                    var iconb = document.createElement("i") 
+                    var iclaseb = "bi bi-trash-fill"
+                    iconb.setAttribute("class", iclaseb)
+                    var contenido6 = document.createTextNode(iconb)
+                    a3.appendChild(iconb)
+                    var btn3 = "btn btn-danger ms-3"
+                    a3.setAttribute("class", btn3)
+                    a3.setAttribute("data-bs-target", "#modalborrar_"+maquinasDecod[i].idusuario)
+                    a3.setAttribute("data-bs-toggle", "modal")
+                    td6.appendChild(a3)
+                    tr.appendChild(td6)
+
+                    document.getElementById("tablebody").appendChild(tr);
+
+                    //alert(maquinasDecod[i].idusuario); 
+                // exit();
+                }
+            }    
+        }
+
+</script>
 
         
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

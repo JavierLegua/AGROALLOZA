@@ -5,6 +5,11 @@
 <div class="container">
 
     <h1>Campañas</h1>
+    <div class="row g-3 align-items justify-content-center mb-3 mt-3">
+                <div class="col-6">
+                    <input oninput="buscadorFiltrador()" type="text" name="buscador" id="buscadorpalabra" class="form-control" aria-describedby="passwordHelpInline" placeholder="Buscador">
+                </div>
+    </div>
 
 <div class="table table-responsive">
 
@@ -156,5 +161,94 @@
     </div>
 
 </main>
+
+<script>
+
+        function buscadorFiltrador(){
+            var palabra = document.getElementById("buscadorpalabra").value;
+            let campanas = '<?php echo $this->campEncript['campanas'];  ?>'
+
+            let campanasDecod = JSON.parse(campanas)
+        
+            document.getElementById("tablebody").innerHTML = "";
+
+            for (let i = 0; i < campanasDecod.length; i++) {
+                if (palabra == "") {
+                    //escribir la tabla con todos los usuarios
+                    //location.reload();
+                    window.location.href="<?php echo RUTA_URL?>/campanas ?>";
+
+
+                } else if(campanasDecod[i].nombre.toLowerCase().includes(palabra.toLowerCase()) || campanasDecod[i].fecha_inicio.toLowerCase().includes(palabra.toLowerCase()) || campanasDecod[i].fecha_fin.toLowerCase().includes(palabra.toLowerCase()) || campanasDecod[i].tipo_cultivo.toLowerCase().includes(palabra.toLowerCase())
+                || campanasDecod[i].kilos_recolectados.toLowerCase().includes(palabra.toLowerCase())) {
+
+                    var tr = document.createElement("tr")
+                    var td = document.createElement("td")
+
+                    
+
+                    var contenido = document.createTextNode(campanasDecod[i].nombre)
+                    td.appendChild(contenido)
+                    tr.appendChild(td)
+
+                    var td3 = document.createElement("td")
+                    var contenido3 = document.createTextNode(campanasDecod[i].fecha_inicio)
+                    td3.appendChild(contenido3)
+                    tr.appendChild(td3)
+
+                    var td4 = document.createElement("td")
+                    var contenido4 = document.createTextNode(campanasDecod[i].fecha_fin)
+                    td4.appendChild(contenido4)
+                    tr.appendChild(td4)
+
+                    var td5 = document.createElement("td")
+                    var contenido5 = document.createTextNode(campanasDecod[i].tipo_cultivo)
+                    td5.appendChild(contenido5)
+                    tr.appendChild(td5)
+
+                    var td9 = document.createElement("td")
+                    var contenido9 = document.createTextNode(campanasDecod[i].kilos_recolectados)
+                    td9.appendChild(contenido9)
+                    tr.appendChild(td9)
+
+                    var td6 = document.createElement("td")
+
+                    var tc = "text-center"
+                    td6.setAttribute("class", tc)
+
+                    var a2 = document.createElement("button")
+                    var icon = document.createElement("i") 
+                    var iclase = "bi bi-pencil"
+                    icon.setAttribute("class", iclase)
+                    var contenido6 = document.createTextNode(icon)
+                    a2.appendChild(icon)
+                    var btn2 = "btn btn-warning"
+                    a2.setAttribute("class", btn2)
+                    a2.setAttribute("onclick", "crearmodalEditar("+campanasDecod[i].idusuario+")")
+                    td6.appendChild(a2)
+                    
+
+                    var a3 = document.createElement("button")
+                    var iconb = document.createElement("i") 
+                    var iclaseb = "bi bi-trash-fill"
+                    iconb.setAttribute("class", iclaseb)
+                    var contenido6 = document.createTextNode(iconb)
+                    a3.appendChild(iconb)
+                    var btn3 = "btn btn-danger ms-3"
+                    a3.setAttribute("class", btn3)
+                    a3.setAttribute("data-bs-target", "#modalborrar_"+campanasDecod[i].idusuario)
+                    a3.setAttribute("data-bs-toggle", "modal")
+                    td6.appendChild(a3)
+                    tr.appendChild(td6)
+
+                    document.getElementById("tablebody").appendChild(tr);
+
+                    //alert(campanasDecod[i].idusuario); 
+                // exit();
+                }
+            }    
+        }
+
+</script>
 
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

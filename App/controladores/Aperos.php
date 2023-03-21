@@ -22,9 +22,13 @@
             
             $aperos = $this->aperoModelo->obtenerAperos();
 
+            $apeEncript = json_encode($aperos);
+
+            $this->apeEncript['aperos'] = $apeEncript;
+
             $this->datos['apero'] = $aperos;
 
-            $this->vista('aperos/inicio', $this->datos);
+            $this->vista('aperos/inicio', $this->datos, $this->apeEncript);
         }
 
         public function borrarApero($id){
