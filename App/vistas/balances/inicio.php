@@ -177,11 +177,11 @@
                                         $nombre = 'Venta maquinaria';
                                         break;
 
-                                    case '3':
+                                    case '4':
                                         $nombre = 'Trabajos varios';
                                         break;
 
-                                    case '3':
+                                    case '5':
                                         $nombre = 'Pago salarios';
                                         break;
                                 }
@@ -323,7 +323,7 @@
                             <input type="text" name="cantidad" id="cantidad" class="form-control form-control-lg" >
                         </div>
                         <div class="mb-3">
-                            <label for="tipo">Tipo: <sup>*</sup></label>
+                            <label for="tipo">Tipo: <sup>*</sup></label><br>
                             <select name="tipo" id="tipo">
                                 <option value="0">Seleccione</option>
                                     <?php foreach ($datos["tipo"] as $tipos): ?>
